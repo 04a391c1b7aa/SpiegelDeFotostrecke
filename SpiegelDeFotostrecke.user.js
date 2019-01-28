@@ -4,7 +4,7 @@
 // @description    Zeigt die Fotostrecke auf einer Seite an.
 // @include        http://www.spiegel.de/fotostrecke/*
 // @grant          GM_xmlhttpRequest
-// @version        1.3.1
+// @version        1.3.2
 // ==/UserScript==
 
 window.spiegelDeFotostrecke = {
@@ -28,7 +28,7 @@ window.spiegelDeFotostrecke = {
         var htmlImage       = html.replace(/(\r|\n)/g, '').replace(/^.+<div class="biga-image" style="width:\d*px;">(.+?)<\/div>.+/, '$1');
 
         // Ziemlich unscharfer Selektor, aber es scheint tatsächlich nur ein <p> im Dokument zu geben
-        var htmlDescription = html.replace(/(\r|\n)/g, '').replace(/^.+<p>(.+?)<\/p>.+/, '$1');
+        var htmlDescription = html.replace(/(\r|\n)/g, '').replace(/^.+biga-image.*<\/div>(.+?)<div.*biga-nav.+/, '$1');
 
         var divImage = document.createElement('div');
         divImage.innerHTML = htmlImage;
