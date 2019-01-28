@@ -3,7 +3,7 @@
 // @namespace      https://github.com/muescha/SpiegelDeFotostrecke
 // @description    Zeigt die Fotostrecke auf einer Seite an.
 // @include        http://www.spiegel.de/fotostrecke/*
-// @grant          GM_xmlhttpRequest
+// @grant          GM.xmlHttpRequest
 // @version        1.3.2
 // ==/UserScript==
 
@@ -14,7 +14,7 @@ window.spiegelDeFotostrecke = {
     },
 
     getImage:function (imageId, url) {
-        GM_xmlhttpRequest({
+        GM.xmlHttpRequest({
           method: "GET",
           url: url,
           onload: function(response) {
